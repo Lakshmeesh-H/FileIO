@@ -11,9 +11,16 @@
 
 # Python Text Translator 
 
+from translate import Translator
+translator = Translator(to_lang='ja')
 try: 
     with open('intro.txt', mode='r') as my_file:
-        print(my_file.read())
+        text = my_file.read()
+        translation = translator.translate(text)
+        print(translation)
+        with open('introtranslate.txt', mode='w') as my_file2:
+            my_file2.write(translation)
+
 except FileNotFoundError as err:
     print('Check the file path')
 
