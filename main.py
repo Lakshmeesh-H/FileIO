@@ -8,4 +8,12 @@
 
 # with open('test.txt', mode='a') as my_file:
 #     text = my_file.write('Hi Its Me again!')
-    
+
+# Python Text Translator 
+
+try: 
+    with open('intro.txt', mode='r') as my_file:
+        print(my_file.read())
+except FileNotFoundError as err:
+    print('Check the file path')
+
